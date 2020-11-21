@@ -1,0 +1,30 @@
+* JSON
+- Javascript Object Notation
+- it is a standard text-based format for representing structured based js object sysnatx.
+- used for transmitting the data in web application
+
+
+* Lifecycle Method
+- Each component in react has a lifecycle method which can monitor & manipulate component.
+- There are three phases for the same (mounting, updating, unmounting)
+
+1. Mounting: mounting means putting a element in the dom.
+react has 4 in-built methods that get called, when mounting the component.
+
+* constructor: called whenever component is created
+* getDerivedStateFromProps: method is called before the render method
+* render: read props & state and return jsx
+* componentDidMount: method is called after the component is rendered.
+
+2. Updating: it is a next phases in the lifecycle when component is updated.
+react has 5 in-built methods that get called, when the component is updated.
+
+* getDerivedStateFromProps: called when component gets updated.
+* shouldComponentUpdate: method return a boolean that specify component should render or not at any update.
+* render: read props & state and return jsx.
+* getSnapshotBeforeUpdate: method allow us to access props & state before update.
+* componentDidUpdate: method allow us to access props & state after update.
+
+3. Unmounting: next phase in the lifecycle when component is removed from the dom
+
+* componentWillUnmount: called when component is reomved from the dom.
