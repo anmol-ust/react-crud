@@ -1,22 +1,10 @@
 {
-    "employees":[
-        {
-            "id":1,
-            "name":"anmol",
-            "gender":"male",
-            "post":"developer"
-        },
-        {
-            "id":2,
-            "name":"suhas",
-            "gender":"male",
-            "post":"product manager"
-        },
-        {
-            "id":3,
-            "name":"ravi",
-            "gender":"male",
-            "post":"team lead"
-        }
-    ]
+  "employees": [
+    {
+      "id": 1,
+      "name": "anmol",
+      "gender": "male",
+      "post": "developer"
+    }
+  ]
 }
