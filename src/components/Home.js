@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import './Home.css';
+// import './Home.css';
 
 class Home extends Component {
 
@@ -14,7 +14,7 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <table>
+                <table className="table table-hover">
                     <thead>
                         <tr>
                             <th>Id</th>
@@ -34,7 +34,7 @@ class Home extends Component {
                                         <td>{emp.gender}</td>
                                         <td>{emp.post}</td>
                                         <td>
-                                            <a href="javascript:void(0)">Edit</a> |&nbsp;
+                                            <a href={`/edit-emp/${emp.id}`}>Edit</a> |&nbsp;
                                             <a href="javascript:void(0)" onClick={() => this.deleteEmployee(emp.id)}>Delete</a>
                                         </td>
                                     </tr>
@@ -53,7 +53,7 @@ class Home extends Component {
 
     fetchEmployees() {
         // api integration from get employees
-        axios.get("http://localhost:5555/employeess")
+        axios.get("http://localhost:5555/employees")
             .then((res) => {
                 console.log(res);
                 this.setState({

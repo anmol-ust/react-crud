@@ -5,6 +5,18 @@
       "name": "anmol",
       "gender": "male",
       "post": "developer"
+    },
+    {
+      "name": "suhas",
+      "gender": "male",
+      "post": "team lead",
+      "id": 2
+    },
+    {
+      "name": "priya",
+      "gender": "female",
+      "post": "team lead",
+      "id": 3
     }
   ]
 }
