@@ -10,7 +10,7 @@ import store from './store';
 import { getProducts } from './action/ProductActions';
 import ProductContainer from './container/ProductContainer';
 
-store.dispatch(getProducts())
+store.dispatch(getProducts());
 
 const App = () => {
   return (

@@ -11,5 +11,5 @@ export function getProducts() {
 }
 
 export function getProductsSuccess(payload) {
-    return { type: GET_PRODUCTS, payload }
+    return { type: GET_PRODUCTS, payload } // action object
 }
