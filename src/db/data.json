@@ -18,5 +18,17 @@
       "post": "team lead",
       "id": 3
     }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "pen",
+      "price": 10
+    },
+    {
+      "id": 2,
+      "name": "pencil",
+      "price": 5
+    }
   ]
 }
