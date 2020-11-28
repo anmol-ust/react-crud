@@ -28,3 +28,13 @@ react has 5 in-built methods that get called, when the component is updated.
 3. Unmounting: next phase in the lifecycle when component is removed from the dom
 
 * componentWillUnmount: called when component is reomved from the dom.
+
+------------------------------------------------------------------------------------------------------
+* Redux
+
+1. You should have to install redux redux-thunk react-redux npm library first
+2. implement ations
+3. implement reducers
+4. implement store & on the same file configure redux-devtools by installing redux-devtools library and add same chrome extension
+5. configure provider on the root component with store & also you can call action initially using store.dispatch.
+6. implement component & container to connect store with component & pass props by using mapStateToProps.
