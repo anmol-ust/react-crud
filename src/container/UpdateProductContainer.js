@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import ProductForm from '../components/ProductFormComponent';
-import { updateProduct } from '../action/ProductActions';
+import { updateProduct,getProduct } from '../action/ProductActions';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import axios from 'axios';
@@ -40,11 +40,12 @@ class UpdateProductContainer extends Component {
 
     componentDidMount(){
         const {match:{params}} = this.props;
-        console.log(params.id);
-        const url = `http://localhost:5555/products/${params.id}`;
-        axios.get(url)
-        .then((response) => this.setState(response.data) )
-        .catch((error) => console.log(error))
+        this.props.getProductById(params.id);
+        setTimeout(() => this.setState(this.props.product),100)
+        // const url = `http://localhost:5555/products/${params.id}`;
+        // axios.get(url)
+        // .then((response) => this.setState(response.data) )
+        // .catch((error) => console.log(error))
     }
 
     render() {
@@ -68,7 +69,16 @@ class UpdateProductContainer extends Component {
 const mapDisPatchToProps = (dispatch) => ({
     handleSubmitForm(payload) {
         dispatch(updateProduct(payload))
+    },
+    getProductById(id) {
+        dispatch(getProduct(id))
     }
 })
 
-export default connect(null, mapDisPatchToProps)(UpdateProductContainer);
+const mapStateToProps = (state) => {
+    return {
+        product:state.productStore.product
+    }
+}
+
+export default connect(mapStateToProps, mapDisPatchToProps)(UpdateProductContainer);

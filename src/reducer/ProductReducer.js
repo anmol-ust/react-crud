@@ -1,4 +1,4 @@
-import { GET_PRODUCTS, CREATE_PRODUCT, UPDATE_PRODUCT, DELETE_PRODUCT } from '../action/ActionTypes';
+import { GET_PRODUCT, GET_ALL_PRODUCTS, CREATE_PRODUCT, UPDATE_PRODUCT, DELETE_PRODUCT } from '../action/ActionTypes';
 
 const initialState = {
     products: [],
@@ -9,9 +9,13 @@ const initialState = {
 export default function productReducer(state = initialState, action) {
 
     switch (action.type) {
-        case GET_PRODUCTS:
+        case GET_ALL_PRODUCTS:
             return {
                 ...state, products: action.payload, product: {}
+            }
+        case GET_PRODUCT:
+            return {
+                ...state, product: action.payload
             }
         case CREATE_PRODUCT:
             return {

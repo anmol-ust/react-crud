@@ -7,12 +7,12 @@ import Edit from './components/Edit';
 import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store';
-import { getProducts } from './action/ProductActions';
+import { getAllProducts } from './action/ProductActions';
 import ProductContainer from './container/ProductContainer';
 import AddProductContainer from './container/AddProductContainer';
 import UpdateProductContainer from './container/UpdateProductContainer';
 
-store.dispatch(getProducts());
+store.dispatch(getAllProducts());
 
 const App = () => {
   return (

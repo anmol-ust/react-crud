@@ -1,8 +1,8 @@
-import { GET_PRODUCTS, CREATE_PRODUCT, DELETE_PRODUCT, UPDATE_PRODUCT} from './ActionTypes';
+import { GET_PRODUCT,GET_ALL_PRODUCTS, CREATE_PRODUCT, DELETE_PRODUCT, UPDATE_PRODUCT} from './ActionTypes';
 import axios from 'axios';
 
 // get
-export function getProducts() {
+export function getAllProducts() {
     return (dispatch) => {
         axios.get("http://localhost:5555/products")
             .then(response => dispatch(getProductsSuccess(response.data)))
@@ -11,7 +11,7 @@ export function getProducts() {
 }
 
 export function getProductsSuccess(payload) {
-    return { type: GET_PRODUCTS, payload } // action object
+    return { type: GET_ALL_PRODUCTS, payload } // action object
 }
 
 // post
@@ -51,4 +51,17 @@ export function updateProduct(payload) {
 
 export function updateProductSuccess(payload) {
     return { type: UPDATE_PRODUCT, payload } // action object
+}
+
+// get
+export function getProduct(id) {
+    return (dispatch) => {
+        axios.get(`http://localhost:5555/products/${id}`)
+            .then(response => dispatch(getProductSuccess(response.data)))
+            .catch(error => console.error("getProducts failed: ", error))
+    }
+}
+
+export function getProductSuccess(payload) {
+    return { type: GET_PRODUCT, payload } // action object
 }

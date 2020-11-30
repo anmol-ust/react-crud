@@ -65,4 +65,5 @@ const mapDisPatchToProps = (dispatch) => ({
     }
 })
 
+
 export default connect(null, mapDisPatchToProps)(AddProductContainer);

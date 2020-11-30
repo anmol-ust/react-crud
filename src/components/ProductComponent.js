@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { deleteProduct } from '../action/ProductActions';
+import { Link } from 'react-router-dom';
 
 class Product extends Component {
 
@@ -18,8 +19,8 @@ class Product extends Component {
                 <td>{name}</td>
                 <td>{price}</td>
                 <td>
-                    <a href={`/edit-product/${id}`}>Edit</a> |&nbsp;
-                    <a href="javascript:void(0)" onClick={() => this.deleteProduct(id)} >Delete</a>
+                    <Link className="btn btn-link" to={`/edit-product/${id}`} >Edit</Link> |&nbsp;
+                    <Link className="btn btn-link" to="undefined" onClick={() => this.deleteProduct(id)} >Delete</Link>
                 </td>
             </tr>
         )
