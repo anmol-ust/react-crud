@@ -9,6 +9,8 @@ import { Provider } from 'react-redux';
 import store from './store';
 import { getProducts } from './action/ProductActions';
 import ProductContainer from './container/ProductContainer';
+import AddProductContainer from './container/AddProductContainer';
+import UpdateProductContainer from './container/UpdateProductContainer';
 
 store.dispatch(getProducts());
 
@@ -23,7 +25,8 @@ const App = () => {
           <div className="card">
             <div className="card-header">
               <NavLink className="btn btn-primary btn-sm" to="/" exact>Home</NavLink>&nbsp;&nbsp;
-        <NavLink className="btn btn-primary btn-sm" to="/add-emp">Add</NavLink>
+              <NavLink className="btn btn-primary btn-sm" to="/add-emp">Add</NavLink>&nbsp;&nbsp;
+              <NavLink className="btn btn-primary btn-sm" to="/product-list" exact>product</NavLink>&nbsp;&nbsp;
             </div>
             <div className="card-body">
               <Switch>
@@ -31,6 +34,8 @@ const App = () => {
                 <Route path="/add-emp" component={Add} />
                 <Route path="/edit-emp/:id" component={Edit} />
                 <Route path="/product-list" component={ProductContainer} />
+                <Route path="/add-product" component={AddProductContainer} />
+                <Route path="/edit-product/:id" component={UpdateProductContainer} />
               </Switch>
             </div>
           </div>

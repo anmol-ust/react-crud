@@ -22,13 +22,18 @@
   "products": [
     {
       "id": 1,
-      "name": "pen",
-      "price": 10
+      "name": "eraser",
+      "price": 6
     },
     {
       "id": 2,
       "name": "pencil",
-      "price": 5
+      "price": 14
+    },
+    {
+      "id": 154,
+      "name": "pendrive",
+      "price": 560
     }
   ]
 }
